@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
+import _ from 'lodash';
 
 // Bootstrap
 import Alert from 'react-bootstrap/Alert';
@@ -49,7 +50,7 @@ class Login extends React.Component {
             }
         }
 
-        if(provider === 'google' && res.w3.U3){
+        if(provider === 'google' && !_.isEmpty(res.profileObj)){
             let username = res.profileObj.email.split('@')[0];
             data = {
                 auth_provider: 'google',
