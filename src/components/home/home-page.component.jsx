@@ -30,7 +30,8 @@ class HomePage extends React.Component {
         
         // Is access_token exists
         if(!isAccessToken() || !await authorize()){
-            history.push(`${BASE_URL}/login`);
+            console.log("push url: ", `${BASE_URL}login`);
+            history.push(`${BASE_URL}login`);
         }
 
         // load reminders

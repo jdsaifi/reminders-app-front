@@ -7,12 +7,12 @@ class Logout extends React.Component{
         const { history } = this.props;
 
         if(!isAccessToken()){
-            history.push(`${BASE_URL}/login`);
+            history.push(`${BASE_URL}login`);
         }
 
         // Remove access token
         sessionStorage.removeItem('reminderapp::access_token');
-        history.push(`${BASE_URL}/login`);
+        history.push(`${BASE_URL}login`);
     }
 }
 
