@@ -24,41 +24,41 @@ export const ProfileCard = ({
             : null 
         }
 
-<Dropdown>
-  <Dropdown.Toggle variant="link" className="more-menu pull-right">
-    <i className="fa fa-ellipsis-h"></i>
-  </Dropdown.Toggle>
+        <Dropdown>
+            <Dropdown.Toggle variant="link" className="more-menu pull-right">
+                <i className="fa fa-ellipsis-h"></i>
+            </Dropdown.Toggle>
 
-  <Dropdown.Menu>
-     {
-        self ?
-        <Dropdown.Item disabled>Self Profile</Dropdown.Item>
-        : null
-    }
-    { 
-        isOwner ? null 
-        : <IsFriend userId={id} self={self} owner={isOwner} isFriend={isFriend} isRequested={isRequested} />
-    }
+            <Dropdown.Menu>
+                {
+                    self ?
+                    <Dropdown.Item disabled>Self Profile</Dropdown.Item>
+                    : null
+                }
+                { 
+                    isOwner ? null 
+                    : <IsFriend userId={id} self={self} owner={isOwner} isFriend={isFriend} isRequested={isRequested} />
+                }
 
-    {
-        isOwner === false && isBlocked === false && self === false ?
-        // <button className="btn btn-sm pull-right btn-info" onClick={handleBlock}>Block this user</button>
-        <Dropdown.Item onClick={handleBlock}>Block this User</Dropdown.Item>
-        : null
-    }
-    {
-        isOwner === false && isBlocked === true ?
-        // <button className="btn btn-sm pull-right btn-info" onClick={handleBlock}>Unblock this user</button>
-        <Dropdown.Item onClick={handleBlock}>Unblock this User</Dropdown.Item>
-        : null
-    }
+                {
+                    isOwner === false && isBlocked === false && self === false ?
+                    // <button className="btn btn-sm pull-right btn-info" onClick={handleBlock}>Block this user</button>
+                    <Dropdown.Item onClick={handleBlock}>Block this User</Dropdown.Item>
+                    : null
+                }
+                {
+                    isOwner === false && isBlocked === true ?
+                    // <button className="btn btn-sm pull-right btn-info" onClick={handleBlock}>Unblock this user</button>
+                    <Dropdown.Item onClick={handleBlock}>Unblock this User</Dropdown.Item>
+                    : null
+                }
 
-    {/* { isOwner === false ? <Dropdown.Item href={`${BASE_URL}me/edit`}>Block this User</Dropdown.Item> : null } */}
-    { isOwner ? <Dropdown.Item href={`${BASE_URL}me/edit`}>Update Profile</Dropdown.Item> : null }
-    { isOwner ? <Dropdown.Item href={`${BASE_URL}me/change-username`}>Change username</Dropdown.Item> : null }
+                {/* { isOwner === false ? <Dropdown.Item href={`${BASE_URL}me/edit`}>Block this User</Dropdown.Item> : null } */}
+                { isOwner ? <Dropdown.Item href={`${BASE_URL}me/edit`}>Update Profile</Dropdown.Item> : null }
+                { isOwner ? <Dropdown.Item href={`${BASE_URL}me/change-username`}>Change username</Dropdown.Item> : null }
 
-  </Dropdown.Menu>
-</Dropdown>
+            </Dropdown.Menu>
+        </Dropdown>
         
         <Card.Body className="text-center">
             <img 
