@@ -3,11 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Bootstrap
 import Card from 'react-bootstrap/Card'
-
 import { BASE_URL } from '../../utils/utils';
-
-
-                    
 
 // alt-src="https://avatars.dicebear.com/v2/avataaars/xxd.svg"
 export const UserSearchCard = ({ dp, display_name, email, username, isOwner }) => (

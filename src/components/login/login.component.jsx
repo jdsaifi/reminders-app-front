@@ -33,9 +33,6 @@ class Login extends React.Component {
 
     signin = async (res, provider) => {
         let data;
-        console.log("provider: ", provider);
-        console.log("res: ", res);
-
         if(provider === 'facebook' && res.email){
             let username = res.email.split('@')[0];
             data = {
@@ -72,7 +69,6 @@ class Login extends React.Component {
 
         if(data){
             const res = await this.props.signin(data);
-            console.log("social login res: ", res);
             if(res.status === false){
                 this.setState({ loginErrorMsg: res.msg });
             }

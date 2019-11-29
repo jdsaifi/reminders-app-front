@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Bootstrap
-import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 import { actionSendFriendRequest } from '../../redux/actions/users.action';
@@ -11,7 +10,7 @@ class IsFriend extends React.Component{
 
     constructor(props){
         super(props);
-        console.log('is friends props: ', props);
+        
         this.state = {
             isFriend: props.isFriend,
             isRequested: props.isRequested,
@@ -49,7 +48,6 @@ class IsFriend extends React.Component{
 
     render() {
         const { isFriend, isRequested, isRequesting, self } = this.state;
-        console.log("is friend state: ", this.state);
 
         let status = '';
         if(isFriend === true) status = <Dropdown.Item disabled>Both are friends</Dropdown.Item>;

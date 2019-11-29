@@ -31,7 +31,7 @@ class ExpiredReminders extends React.Component {
         
         // Is access_token exists
         if(!isAccessToken() || !await authorize()){
-            console.log("push url: ", `${BASE_URL}login`);
+            
             return history.push(`${BASE_URL}login`);
         }
 

@@ -5,8 +5,6 @@ import {
   Route
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-
-// import GoogleLogin from 'react-google-login';
 import store from './redux/store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,18 +26,8 @@ import ChangeUsername from './components/profile/change-username.component';
 import ExpiredReminders from './components/reminders/expired-reminders.component';
 import { BASE_URL } from './utils/utils'
 
-function TestComp(props){
-  return (
-    <div>
-      local timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone}
-    </div>
-  )
-}
-
-class App extends React.Component {
-  
+class App extends React.Component {  
   render(){
-    // console.log(`${window.location.origin.toString()}`);
     return (
       <Provider store={store}>
         <Router>
@@ -47,7 +35,6 @@ class App extends React.Component {
           <Switch>
             <Route exact path={`${BASE_URL}`} component={HomePage} />
             <Route exact path={`${BASE_URL}past-reminders`} component={ExpiredReminders} />
-            <Route exact path={`${BASE_URL}testcomp`} component={TestComp} />
             <Route path={`${BASE_URL}login`} component={Login} />
             <Route exact path={`${BASE_URL}me/change-username`} component={ChangeUsername} />
             <Route exact path={`${BASE_URL}me/edit`} component={UpdateProfile} />

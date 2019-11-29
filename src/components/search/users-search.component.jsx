@@ -26,7 +26,7 @@ class UserSearch extends React.Component {
         }
     }
 
-    async componentDidUpdate(prevProps, prevState) {
+    async componentDidUpdate(prevProps) {
         const { history, authorize, match: thisMatch , searchUser } = this.props;
         const { match: prevMatch } = prevProps;
         const { current_page } = this.state;        
@@ -55,7 +55,6 @@ class UserSearch extends React.Component {
     async componentDidMount(){
         const { history, authorize, match: { params }, loadSelf, searchUser } = this.props;
         const { current_page } = this.state;
-        console.log("users search params: ", params)
         
         // Is access_token exists
         if(!isAccessToken() || !await authorize()){

@@ -59,7 +59,6 @@ export const validateDateTime = (date, time) => {
 
     if(partsOfTime.includes(time)){
         const currentHour  = new Date().getHours();
-        // let currentHour = 3;
         let plusOneHourInCurrentHour = currentHour + 1;
     
         let hourForPart = null;

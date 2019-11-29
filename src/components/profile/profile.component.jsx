@@ -9,7 +9,6 @@ import { actionMe } from '../../redux/actions/users.action';
 
 /** Import Component */
 import { ProfileCard } from './profile-card.component';
-import { ProfileGlance } from './profile-glance.component';
 
 class Profile extends React.Component {
 
@@ -39,9 +38,6 @@ class Profile extends React.Component {
                     <article className="col-md text-cetner">
                         <ProfileCard {...user} isOwner={true} />
                     </article>
-                    {/* <article className="col-md bg1">
-                        <ProfileGlance {...user} />
-                    </article> */}
                 </div>
             </section>
         )

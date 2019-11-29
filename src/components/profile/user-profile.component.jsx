@@ -11,8 +11,6 @@ import API from '../../utils/APIHelper';
 
 /** Import Component */
 import { ProfileCard } from './profile-card.component';
-import { ProfileGlance } from './profile-glance.component';
-
 
 function RequestButtons({ username, actionAccept, actionReject, reqAccepting, reqRejecting}){
     return (
@@ -92,7 +90,7 @@ class UserProfile extends React.Component {
 
     actionAccept = async () => {
         const { user: { username } } = this.props;
-        console.log("action accept clicked");
+        
         this.setState({
             reqAccepting: true
         });
@@ -133,7 +131,7 @@ class UserProfile extends React.Component {
     }
 
     actionReject = async () => {
-        console.log("action reject clicked");
+        
         const { user: { username } } = this.props;
         this.setState({
             reqRejecting: true
@@ -294,10 +292,7 @@ class UserProfile extends React.Component {
                 <div className="row mt-5">
                     <article className="col-md text-cetner">
                         <ProfileCard {...user} isOwner={false} handleBlock={this.handleBlock} />
-                    </article>
-                    {/* <article className="col-md-6 col-lg-8 col-sm-12 bg1">
-                        <ProfileGlance {...user} isOwner={false}  />
-                    </article> */}
+                    </article>                    
                 </div>
             </section>
         )
